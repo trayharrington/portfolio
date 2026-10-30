@@ -14,8 +14,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.traylonharrington.com"),
   title: "Traylon Harrington",
   description: "Full-stack engineer building tools that take the friction out of people's work.",
+  openGraph: {
+    title: "Traylon Harrington",
+    description: "Full-stack engineer building tools that take the friction out of people's work.",
+    url: "/",
+    siteName: "Traylon Harrington",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -43,10 +43,12 @@ npm run build    # production build; Vercel runs the same command
 ```
 src/
   app/
-    layout.tsx           # shared nav, skip link, fonts
+    layout.tsx           # shared nav, skip link, fonts, share metadata
+    opengraph-image.tsx  # social preview card shown when the link is shared
     page.tsx             # home
     projects/page.tsx
     resume/page.tsx
+  assets/fonts/          # Geist TTFs for the social preview image
   components/NavLink.tsx # nav link that marks the current page
   data/projects.ts       # all project content
 public/
