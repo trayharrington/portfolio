@@ -13,13 +13,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const description =
+  "Full-stack engineer in Omaha building tools that take the friction out of people's work with Ruby on Rails, React, and TypeScript.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.traylonharrington.com"),
   title: "Traylon Harrington",
-  description: "Full-stack engineer building tools that take the friction out of people's work.",
+  description,
   openGraph: {
     title: "Traylon Harrington",
-    description: "Full-stack engineer building tools that take the friction out of people's work.",
+    description,
     url: "/",
     siteName: "Traylon Harrington",
     type: "website",
