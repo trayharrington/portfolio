@@ -10,7 +10,7 @@ export default function Projects() {
   const earlier = projects.filter((p) => !p.featured);
 
   return (
-    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-12 px-6 py-16 sm:px-16">
+    <main id="main" className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-12 px-6 py-16 sm:px-16">
       <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
 
       <section className="flex flex-col gap-8">

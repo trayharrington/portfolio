@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# traylonharrington.com
 
-## Getting Started
+My personal portfolio site: who I am, what I've built, and my resume.
 
-First, run the development server:
+**Live:** https://www.traylonharrington.com
+
+## Stack
+
+- **Next.js 16** (App Router) with **React 19** and **TypeScript**
+- **Tailwind CSS 4** for styling
+- **Vercel** for hosting, with automatic deploys on every push to `main`
+- **Cloudflare** for DNS and email routing (DNS only; the site is served directly by Vercel)
+
+## Choices
+
+- **Static pages.** Every page is prerendered at build time. A portfolio doesn't need a server or a database, so there's nothing to keep running and very little to attack.
+- **Project data lives in one file.** `src/data/projects.ts` holds every project. Adding a project is one new entry, and the `featured` flag decides whether it gets a full card or a line under "Earlier work."
+- **Proprietary work is described, not linked.** My strongest project, an account-shadowing widget I built at WP Engine, is company code, so its card explains the problem and what I built without a repo link.
+- **A web-specific resume PDF.** The downloadable resume leaves out my phone number, since a public PDF is easy to scrape.
+
+## Accessibility
+
+I aimed for WCAG 2.2 AA and checked every page with Lighthouse and axe in both light and dark mode (Lighthouse accessibility: 100; axe: 0 violations).
+
+- A "Skip to content" link appears on the first Tab press.
+- A visible 2px focus ring on every interactive element.
+- The nav marks the current page with `aria-current="page"` as well as an underline.
+- Icon-only links (LinkedIn, GitHub, email) have accessible names.
+- One `h1` per page and no skipped heading levels.
+- The layout reflows to phone width without horizontal scrolling.
+
+## Running locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run lint
+npm run build    # production build; Vercel runs the same command
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+  app/
+    layout.tsx           # shared nav, skip link, fonts
+    page.tsx             # home
+    projects/page.tsx
+    resume/page.tsx
+  components/NavLink.tsx # nav link that marks the current page
+  data/projects.ts       # all project content
+public/
+  headshot.jpg
+  Traylon-Harrington-Resume.pdf
+```

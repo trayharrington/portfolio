@@ -49,7 +49,7 @@ const skills = [
 
 export default function Resume() {
   return (
-    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-12 px-6 py-16 sm:px-16">
+    <main id="main" className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-12 px-6 py-16 sm:px-16">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <h1 className="text-4xl font-bold tracking-tight">Resume</h1>
         <a
