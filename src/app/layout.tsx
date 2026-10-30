@@ -29,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <nav aria-label="Main" className="flex gap-6 font-medium">
             <Link href="/">Home</Link>
             <Link href="/projects">Projects</Link>
+            <Link href="/resume">Resume</Link>
           </nav>
         </header>
         {children}
