@@ -3,9 +3,8 @@ import {FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-center gap-8 px-6 sm:px-16 bg-white
-      dark:bg-black sm:items-start">
+    <div className="flex flex-col flex-1 items-center justify-center">
+      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-center gap-8 px-6 sm:px-16 sm:items-start">
         <Image
             src={"/headshot.jpg"}
             alt={"Traylon Harrington"}
